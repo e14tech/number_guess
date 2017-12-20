@@ -24,15 +24,11 @@ static int nonIntDetector(char *input, unsigned long stringLength) {
                 break;
             }
             if(intDetect != inputCounter) {
-                nonIntDetect = 1;
-                
                 puts("Numbers only, please.");
                 
-                goto nestedLoopBreak;
+                return 1;
             }
         }
-nestedLoopBreak:
-    
     return nonIntDetect;
 }
 
@@ -82,8 +78,12 @@ int main() {
                 loopChecker = 0;
                 continue;
             }
-            else if(playAgain == 1)
+            else if(playAgain == 1) {
                 loopChecker = 0;
+                continue;
+            }
+            else
+                loopChecker = 1;
         }
         while(loopChecker && puts("Invalid option."));
     }
