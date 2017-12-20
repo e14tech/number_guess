@@ -76,11 +76,9 @@ int main() {
             if(playAgain == 2) {
                 playAgain = 0;
                 loopChecker = 0;
-                continue;
             }
             else if(playAgain == 1) {
                 loopChecker = 0;
-                continue;
             }
             else
                 loopChecker = 1;
